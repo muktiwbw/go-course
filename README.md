@@ -1,3 +1,3 @@
-# Noob Server
+# Go Basic
 
-A server that newbie usually do when building their (my) first API server using new language.
+Doing basic programming things in Go.
