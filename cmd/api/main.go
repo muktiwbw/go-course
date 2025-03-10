@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/muktiwbw/go-course/scripts/env"
+	"github.com/muktiwbw/go-course/internal/env"
 )
 
 // Mainly used for setting up configurations and dependencies
