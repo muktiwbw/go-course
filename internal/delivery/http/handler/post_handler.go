@@ -10,6 +10,9 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
+const contentTypeHeader = "Content-Type"
+const jsonContentType = "application/json"
+
 type postHandler struct {
 	postUseCase domain.PostUseCase
 }
@@ -33,7 +36,7 @@ func (h *postHandler) CreatePost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set(contentTypeHeader, jsonContentType)
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(post)
 }
@@ -45,7 +48,7 @@ func (h *postHandler) GetAllPosts(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set(contentTypeHeader, jsonContentType)
 	json.NewEncoder(w).Encode(posts)
 }
 
@@ -62,7 +65,7 @@ func (h *postHandler) GetPost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set(contentTypeHeader, jsonContentType)
 	json.NewEncoder(w).Encode(post)
 }
 
@@ -84,6 +87,6 @@ func (h *postHandler) UpdatePost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set(contentTypeHeader, jsonContentType)
 	json.NewEncoder(w).Encode(post)
 }
